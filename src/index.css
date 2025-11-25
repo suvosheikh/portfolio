@@ -1,0 +1,255 @@
+/* src/index.css - Final, Clean, and Consolidated Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. Base & Typography */
+/* -------------------- */
+html {
+  /* Enables smooth scrolling across the entire site */
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  /* Primary font is 'Inter', with 'Poppins' imported for potential use */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  /* Ensures no accidental horizontal scrolling */
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* 2. Custom Utility Classes (Glow Effects) */
+/* -------------------------------------- */
+.glow-text {
+  text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+.glow-button {
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 25px rgba(0, 188, 212, 0.5);
+}
+
+.glow-border {
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+}
+
+.glow-effect {
+  /* Used for background pulse effect in Navbar indicator */
+  background: radial-gradient(circle, rgba(0, 188, 212, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Text glow on hover */
+.text-glow-hover {
+  transition: text-shadow 0.3s ease;
+}
+
+.text-glow-hover:hover {
+  text-shadow: 0 0 20px rgba(0, 188, 212, 0.7);
+}
+
+/* 3. Navigation & Layout */
+/* ---------------------- */
+/* Margin top for smooth scrolling to sections (adjusts for fixed navbar height) */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Ensures smooth transitions for all interactive elements */
+button,
+a,
+.interactive {
+  transition: all 0.3s ease;
+}
+
+/* Desktop Navigation Active Indicator (Replaced inline style in component) */
+/* Note: The component uses Tailwind for the basic active indicator, 
+   but this class provides a transition/animation effect if applied. */
+.nav-active-indicator {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00bcd4, #3b82f6);
+  border-radius: 2px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* 4. Scrollbar Customization */
+/* -------------------------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #161616;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Use linear-gradient for a modern look */
+  background: linear-gradient(180deg, #00bcd4, #3b82f6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00acc1, #2563eb);
+}
+
+/* 5. Micro-Interactions */
+/* --------------------- */
+/* Enhanced hover effects for cards */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 188, 212, 0.15);
+}
+
+/* Ripple effect for buttons (Requires JavaScript to apply active class) */
+.ripple-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple-button:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Border animation (Complex gradient border effect) */
+.border-animate {
+  position: relative;
+}
+
+.border-animate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #00bcd4, #3b82f6, #00bcd4) border-box;
+  /* Masking creates the border effect */
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.border-animate:hover::before {
+  opacity: 1;
+}
+
+/* 6. Mobile Optimizations (Media Queries) */
+/* ------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Better touch targets and font sizing for mobile menu items */
+  .nav-item-mobile {
+    min-height: 60px;
+    padding: 16px 24px;
+    font-size: 18px;
+  }
+
+  /* Reduce scroll margin top for mobile navbar */
+  section {
+    scroll-margin-top: 70px;
+  }
+
+  /* Prevent zoom on input focus for iOS */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  /* Mobile-specific padding for contact section */
+  .contact-section-mobile {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Mobile-specific card padding and spacing */
+  .contact-card-mobile {
+    margin: 0.5rem 0;
+    padding: 1rem;
+  }
+
+  /* Ensure proper text alignment on mobile */
+  .contact-text-mobile {
+    text-align: center;
+  }
+
+  /* Better button sizing for mobile */
+  .contact-button-mobile {
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  /* Ensure no horizontal scrolling on mobile, overriding any previous settings */
+  body {
+    overflow-x: hidden;
+  }
+}

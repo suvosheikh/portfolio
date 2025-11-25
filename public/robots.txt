@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://sa-shuvo-sheikh.vercel.app/sitemap.xml
-Sitemap: https://sa-shuvo-sheikh.pages.dev/sitemap.xml
-Sitemap: https://sa-shuvo-sheikh.netlify.app/sitemap.xml

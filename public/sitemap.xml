@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://sa-shuvo-sheikh.vercel.app</loc>
-    <lastmod>2025-11-25T00:00:00Z</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://sa-shuvo-sheikh.vercel.app/</loc>
+    <lastmod>2025-11-27</lastmod>
     <priority>1.0</priority>
   </url>
-
-  <url>
-    <loc>https://sa-shuvo-sheikh.vercel.app/experience</loc>
-    <lastmod>2025-11-25T00:00:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://sa-shuvo-sheikh.vercel.app/about</loc>
-    <lastmod>2025-11-25T00:00:00Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://sa-shuvo-sheikh.vercel.app/contact</loc>
-    <lastmod>2025-11-25T00:00:00Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <url>
     <loc>https://sa-shuvo-sheikh.vercel.app/certifications</loc>
-    <lastmod>2025-11-25T00:00:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2025-11-27</lastmod>
+    <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://sa-shuvo-sheikh.vercel.app/portfolio</loc>
-    <lastmod>2025-11-20T00:00:00Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2025-11-27</lastmod>
+    <priority>0.9</priority>
   </url>
-
+  <url>
+    <loc>https://sa-shuvo-sheikh.vercel.app/contact</loc>
+    <lastmod>2025-11-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sa-shuvo-sheikh.vercel.app/about</loc>
+    <lastmod>2025-11-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sa-shuvo-sheikh.vercel.app/skills</loc>
+    <lastmod>2025-11-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sa-shuvo-sheikh.vercel.app/experience</loc>
+    <lastmod>2025-11-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sa-shuvo-sheikh.vercel.app/testimonials</loc>
+    <lastmod>2025-11-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sa-shuvo-sheikh.vercel.app/blog</loc>
+    <lastmod>2025-11-27</lastmod>
+    <priority>0.9</priority>
+  </url>
 </urlset>
